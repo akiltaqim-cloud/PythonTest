@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Example</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+    <h2>Statistics by Soon Company(copyrighted)</h2>
+    <div id="company-container"></div>
+
+    <script type="text/javascript">
+        let companies = [
+            {
+                "name": "Mukhriz",
+                "Bitches": "0",
+                "ceo": "Mary",
+                "rating": 3.6
+            },
+            {
+                "name": "Mustaqim",
+                "Bitches": "5000",
+                "rating": 5
+            },
+            {
+                "name": "Lazy Genius",
+                "Bitches": "0(Too lazy to get some)",
+                "rating": 4.6
+            },
+            {
+                "name": "Farhin",
+                "Bitches": "4",
+                "rating": 4
+        }]
+
+        // 1. Select the container
+        const container = document.getElementById('company-container');
+
+        // 2. Build the table HTML string
+        let tableHTML = `<table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Bitches</th>
+                                <th>Rating</th>
+                            </tr>`;
+
+        // 3. Loop through the array and add rows
+        companies.forEach(company => {
+            tableHTML += `<tr>
+                            <td>${company.name}</td>
+                            <td>${company.Bitches}</td>
+                            <td>${company.rating} / 5</td>
+                          </tr>`;
+        });
+
+        tableHTML += `</table>`;
+
+        // 4. Inject it into the page
+        container.innerHTML = tableHTML;
+    </script>
+</body>
+</html>
